@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>controller.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddJobAppln</servlet-name>
+        <servlet-class>controller.AddJobAppln</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MailDispatcher</servlet-name>
+        <servlet-class>controller.MailDispatcher</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddEmpServlet</servlet-name>
+        <servlet-class>controller.AddEmpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddJobAppln</servlet-name>
+        <url-pattern>/AddJobAppln.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MailDispatcher</servlet-name>
+        <url-pattern>/MailDispatcher</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddEmpServlet</servlet-name>
+        <url-pattern>/AddEmpServlet.do</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <resource-ref>
+        <description>connection to database</description>
+        <res-ref-name>jdbc/HRMS</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+</web-app>

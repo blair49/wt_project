@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Login to HRMS</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="myStyle.css">
+        <script src="formvalidation.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="loginstyle.css">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">SmartHRMS</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="apply.html">Apply for job</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <img src="avatar.png" alt="avatar">
+            <form name="login_form" method="post" action="LoginServlet.do">
+                <div class="form-input">
+                    <i class="fa fa-user fa-2x cust" aria-hidden="true"></i>
+                    <input type="text" name="usrname" placeholder="Enter Username" 
+                           onblur="validateNonEmpty(this,document.getElementById('name_help'))">
+                    <br><span id="name_help" class="help"></span>
+                    <br>
+                    <i class="fa fa-lock fa-2x cust" aria-hidden="true"></i>
+                    <input type="password" name="passwd" placeholder="Enter Password" 
+                           onblur="validateNonEmpty(this,document.getElementById('passwd_help'))">
+                    <br><span id="passwd_help" class="help"></span>
+                    <br>
+                    <b style="color:whitesmoke;">Login as:
+                    HR <input type="radio" name="logintype" value="hr" checked/>
+                    Employee<input type="radio" name="logintype" value="emp"/>
+                    </b>
+                    <br>
+                    <input type="submit" name="submit" value="Login">
+                </div>
+            </form>
+        </div>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>

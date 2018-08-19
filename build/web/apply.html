@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Apply for a job</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="myStyle.css">
+        <script src="formvalidation.js"></script>
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="index.html">SmartHRMS</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="apply.html">Apply for job</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div>
+            <form class="form-horizontal" method="post" action="AddJobAppln.do">
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend style="text-align:center;">Job Application</legend>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="fname">First Name</label>  
+                        <div class="col-md-3">
+                            <input name="fname" class="form-control input-md" id="name" required="" type="text" placeholder="Enter first name" 
+                                   onblur="validateNonEmpty(this, getElementById('name_help'))">
+                            <span id="name_help" class="help"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="lname">Last Name</label>  
+                        <div class="col-md-3">
+                            <input name="lname" class="form-control input-md" id="name" required="" type="text" placeholder="Enter last name" 
+                                   onblur="validateNonEmpty(this, getElementById('name_help'))">
+                            <span id="name_help" class="help"></span>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="email">Email Id</label>  
+                        <div class="col-md-4">
+                            <input name="email" class="form-control input-md" id="email" required="" type="text" placeholder="Enter email"
+                                   onblur="validateEmail(this, document.getElementById('email_help'))">
+                            <span id="email_help" class="help"></span>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="phoneno">Phone no.</label>  
+                            <div class="col-md-4">
+                                <input name="phoneno" class="form-control input-md" id="phoneno" required="" type="text" placeholder="Enter Phone no."
+                                       onblur="validatePhone(this, document.getElementById('phoneno_help'))">
+                            </div>
+                        <span id="phoneno_help" class="help"></span>
+                    </div>
+
+                    <!-- Textarea -->
+                    <!--<div class="form-group">
+                        <label class="col-md-4 control-label" for="addr">Address</label>
+                        <div class="col-md-4">                     
+                            <textarea name="addr" class="form-control" id="addr" 
+                                      onblur="validateNonEmpty(this, getElementById('addr_help'))"></textarea>
+                        </div>
+                        <span id="addr_help" class="help"></span>
+                    </div>-->
+
+                    <!-- Select Basic -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="city">City</label>
+                        <div class="col-md-4">
+                            <select name="city" class="form-control" id="city">
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Kolkata">Kolkata</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="zipcode">Zip Code</label>  
+                        <div class="col-md-4">
+                            <input name="zipcode" class="form-control input-md" id="zipcode" required="" type="text" placeholder="Enter Postal/Zip code"
+                                   onblur="validateZipCode(this,document.getElementById('zipcode_help'))">
+                        </div>
+                        <span id="zipcode_help" class="help"></span>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="dob">DOB</label>  
+                        <div class="col-md-4">
+                            <input name="dob" class="form-control input-md" id="dob" required="" type="text" placeholder="DD-MM-YYYY"
+                                   onblur="validateDate(this, document.getElementById('date_help'))">
+                        </div>
+                        <span id="date_help" class="help"></span>
+                    </div>
+
+                    <!-- Multiple Radios (inline) -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="gender">Gender</label>
+                        <div class="col-md-4"> 
+                            <label class="radio-inline" for="gender-0">
+                            <input name="gender" id="gender-0" type="radio" checked="checked" value="m">
+                            Male
+                            </label> 
+                        <label class="radio-inline" for="gender-1">
+                        <input name="gender" id="gender-1" type="radio" value="f">
+                        Female
+                        </label>
+                        </div>
+                    </div>
+
+                    <!-- Select Multiple -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="skills">Skills</label>
+                        <div class="col-md-4">
+                            <select name="skills" class="form-control" id="skills" multiple="multiple">
+                                <option value="C">C</option>
+                                <option value="Java">Java</option>
+                                <option value="C#">C#</option>
+                                <option value="C++">C++</option>
+                                <option value="Android">Android</option>
+                                <option value="iOS">iOS</option>
+                                <option value="Python">Python</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="submit"></label>
+                        <div class="col-md-8">
+                            <input type="submit" name="submit" value="Submit" class="btn btn-primary" id="submit">
+                            <input  type="reset" name="reset" value="Reset" class="btn btn-danger" id="reset">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        
+        <script src="formvalidation.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
